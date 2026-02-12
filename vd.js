@@ -81,7 +81,12 @@ function showRomanceMovies() {
 
 function showComedyMovies() {
     renderPage(() => movieList("Comedy Picks 😂",
-        ["The Proposal 😂","How I Met Your Mother 💎","FRIENDS 👔","10 Things I Hate About You 💌"]
+        [
+            "The Proposal 😂",
+            "FRIENDS 📺",
+            "How I Met Your Mother 🍻",
+            "10 Things I Hate About You 💌"
+        ]
     ));
 }
 

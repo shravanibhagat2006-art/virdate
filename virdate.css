@@ -16,20 +16,22 @@ h1 {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(2, 200px);
-    gap: 20px;
-    justify-content: center;
-    margin-top: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+    margin-top: 30px;
+    padding: 0 20px;
 }
+
 
 .option {
     background-color: #a8e0ff;
-    padding: 40px 10px;
+    padding: 25px 10px;
     border-radius: 15px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 16px;
     transition: 0.3s;
 }
+
 
 .option:hover {
     transform: scale(1.08);
@@ -37,24 +39,27 @@ h1 {
 }
 
 .main-btn {
-    padding: 15px 30px;
-    font-size: 18px;
+    padding: 12px 20px;
+    font-size: 16px;
     border: none;
     border-radius: 12px;
     background-color: #5ec6ff;
     color: white;
     cursor: pointer;
-    margin-top: 30px;
+    margin-top: 20px;
 }
+
 
 .main-btn:hover {
     background-color: #3db4f2;
 }
 
 .gif {
-    width: 200px;
-    margin-top: 30px;
+    width: 60%;
+    max-width: 250px;
+    margin-top: 25px;
 }
+
 
 .fade {
     animation: fadeIn 0.5s ease-in-out;
