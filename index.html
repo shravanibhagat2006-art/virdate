@@ -1,93 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Virtual Date 💙</title>
-  <link rel="stylesheet" href="./virdate.css">
+    <title>Virtual Date 💙</title>
+    <link rel="stylesheet" href="./virdate.css">
 </head>
 <body>
 
-<div class="container">
+    <!-- Floating Cat GIFs -->
+    <img src="https://media.giphy.com/media/KmxmoHUGPDjfQXqGgv/giphy.gif" class="cat cat1">
+    <img src="https://media.giphy.com/media/KmxmoHUGPDjfQXqGgv/giphy.gif" class="cat cat1">
 
-  <!-- INTRO -->
-  <div id="intro" class="section active">
-    <h1>Here’s a question 💙</h1>
-    <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" class="cat-gif">
-    <button class="main-btn" id="startBtn">Click to Continue ✨</button>
-  </div>
-
-  <!-- HOME -->
-  <div id="home" class="section">
-    <h1>Pick our Virtual Date 💫</h1>
-
-    <div class="grid">
-      <div class="card" data-target="movie">🎬<p>Movie Night</p></div>
-      <div class="card" data-target="food">🍕<p>Eat Together</p></div>
-      <div class="card" data-target="game">🎮<p>Play a Game</p></div>
-      <div class="card" data-target="deep">🌙<p>Deep Talk</p></div>
+    <!-- Page 1 -->
+    <div class="page active" id="page1">
+        <h1>Here's a Question 💭</h1>
+        <button class="main-btn" onclick="goToPage('page2')">
+            Will you go on a virtual date with me? 💙
+        </button>
     </div>
 
-    <button class="back-btn" data-target="intro">⬅ Back</button>
-  </div>
-
-  <!-- MOVIE -->
-  <div id="movie" class="section">
-    <h1>Choose a Genre 🎥</h1>
-    <div class="grid">
-      <div class="card final" data-choice="Romantic Movie 💙">💖<p>Romance</p></div>
-      <div class="card final" data-choice="Comedy Night 😂">😂<p>Comedy</p></div>
-      <div class="card final" data-choice="Horror Night 👻">👻<p>Horror</p></div>
-      <div class="card final" data-choice="Anime Night 🌸">🌸<p>Anime</p></div>
+    <!-- Page 2 -->
+    <div class="page" id="page2">
+        <h1>Pick Our Virtual Date 💫</h1>
+        <div class="grid">
+            <div class="option" onclick="showSection('movieSection')">🎬 Movie Night</div>
+            <div class="option" onclick="showSection('gameSection')">🎮 Game Night</div>
+            <div class="option" onclick="showSection('foodSection')">🍕 Dinner Date</div>
+            <div class="option" onclick="showSection('musicSection')">🎵 Music Date</div>
+        </div>
     </div>
-    <button class="back-btn" data-target="home">⬅ Back</button>
-  </div>
 
-  <!-- FOOD -->
-  <div id="food" class="section">
-    <h1>What are we eating? 🍴</h1>
-    <div class="grid">
-      <div class="card final" data-choice="Pizza Date 🍕">🍕<p>Pizza</p></div>
-      <div class="card final" data-choice="Maggi Night 🍜">🍜<p>Maggi</p></div>
-      <div class="card final" data-choice="Burger Time 🍔">🍔<p>Burger</p></div>
-      <div class="card final" data-choice="Dessert Date 🍰">🍰<p>Dessert</p></div>
+    <!-- MOVIE SECTION -->
+    <div class="page" id="movieSection">
+        <h1>Choose a Genre 🎬</h1>
+        <div class="grid">
+            <div class="option" onclick="showSection('romanceMovies')">💖 Romance</div>
+            <div class="option" onclick="showSection('comedyMovies')">😂 Comedy</div>
+            <div class="option" onclick="showSection('horrorMovies')">👻 Horror</div>
+        </div>
+        <button class="back-btn" onclick="goBack()">⬅ Back</button>
     </div>
-    <button class="back-btn" data-target="home">⬅ Back</button>
-  </div>
 
-  <!-- GAME -->
-  <div id="game" class="section">
-    <h1>Pick a Game 🎮</h1>
-    <div class="grid">
-      <div class="card final" data-choice="Truth or Dare 😏">😏<p>Truth or Dare</p></div>
-      <div class="card final" data-choice="Rapid Fire 💥">💥<p>Rapid Fire</p></div>
-      <div class="card final" data-choice="Online Game 🎯">🎯<p>Online Game</p></div>
-      <div class="card final" data-choice="Rock Paper Scissors ✊">✊<p>RPS</p></div>
+    <!-- ROMANCE MOVIES -->
+    <div class="page" id="romanceMovies">
+        <h1>Romance Picks 💖</h1>
+        <div class="grid small">
+            <div class="option">The Notebook</div>
+            <div class="option">Before Sunrise</div>
+            <div class="option">Pride & Prejudice</div>
+            <div class="option">La La Land</div>
+        </div>
+        <button class="back-btn" onclick="goBack()">⬅ Back</button>
     </div>
-    <button class="back-btn" data-target="home">⬅ Back</button>
-  </div>
 
-  <!-- DEEP -->
-  <div id="deep" class="section">
-    <h1>Late Night Mood 🌙</h1>
-    <div class="grid">
-      <div class="card final" data-choice="Future Plans 🌍">🌍<p>Future</p></div>
-      <div class="card final" data-choice="Emotional Talk 💌">💌<p>Emotional</p></div>
-      <div class="card final" data-choice="Missing You Hours 🥺">🥺<p>Miss You</p></div>
-      <div class="card final" data-choice="Silly + Cute 🐣">🐣<p>Silly</p></div>
+    <!-- COMEDY MOVIES -->
+    <div class="page" id="comedyMovies">
+        <h1>Comedy Picks 😂</h1>
+        <div class="grid small">
+            <div class="option">The Proposal</div>
+            <div class="option">Crazy Rich Asians</div>
+            <div class="option">The Intern</div>
+            <div class="option">10 Things I Hate About You</div>
+        </div>
+        <button class="back-btn" onclick="goBack()">⬅ Back</button>
     </div>
-    <button class="back-btn" data-target="home">⬅ Back</button>
-  </div>
 
-  <!-- FINAL -->
-  <div id="final" class="section">
-    <h1>It’s a Date 💙</h1>
-    <img src="https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif" class="cat-gif">
-    <p id="selectedOption" class="final-text"></p>
-    <button class="main-btn" data-target="home">Start Again ✨</button>
-  </div>
+    <!-- HORROR MOVIES -->
+    <div class="page" id="horrorMovies">
+        <h1>Horror Picks 👻</h1>
+        <div class="grid small">
+            <div class="option">The Conjuring</div>
+            <div class="option">A Quiet Place</div>
+            <div class="option">It</div>
+            <div class="option">The Nun</div>
+        </div>
+        <button class="back-btn" onclick="goBack()">⬅ Back</button>
+    </div>
 
-</div>
-
-<script src="./vd.js"></script>
+    <script src="./vd.js"></script>
 </body>
 </html>
