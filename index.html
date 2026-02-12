@@ -2,80 +2,12 @@
 <html>
 <head>
     <title>Virtual Date 💙</title>
-    <link rel="stylesheet" href="./virdate.css">
+    <link rel="stylesheet" href="virdate.css">
 </head>
 <body>
 
-    <!-- Floating Cat GIFs -->
-    <img src="https://media.giphy.com/media/KmxmoHUGPDjfQXqGgv/giphy.gif" class="cat cat1">
-    <img src="https://media.giphy.com/media/KmxmoHUGPDjfQXqGgv/giphy.gif" class="cat cat1">
+    <div id="app"></div>
 
-    <!-- Page 1 -->
-    <div class="page active" id="page1">
-        <h1>Here's a Question 💭</h1>
-        <button class="main-btn" onclick="goToPage('page2')">
-            Will you go on a virtual date with me? 💙
-        </button>
-    </div>
-
-    <!-- Page 2 -->
-    <div class="page" id="page2">
-        <h1>Pick Our Virtual Date 💫</h1>
-        <div class="grid">
-            <div class="option" onclick="showSection('movieSection')">🎬 Movie Night</div>
-            <div class="option" onclick="showSection('gameSection')">🎮 Game Night</div>
-            <div class="option" onclick="showSection('foodSection')">🍕 Dinner Date</div>
-            <div class="option" onclick="showSection('musicSection')">🎵 Music Date</div>
-        </div>
-    </div>
-
-    <!-- MOVIE SECTION -->
-    <div class="page" id="movieSection">
-        <h1>Choose a Genre 🎬</h1>
-        <div class="grid">
-            <div class="option" onclick="showSection('romanceMovies')">💖 Romance</div>
-            <div class="option" onclick="showSection('comedyMovies')">😂 Comedy</div>
-            <div class="option" onclick="showSection('horrorMovies')">👻 Horror</div>
-        </div>
-        <button class="back-btn" onclick="goBack()">⬅ Back</button>
-    </div>
-
-    <!-- ROMANCE MOVIES -->
-    <div class="page" id="romanceMovies">
-        <h1>Romance Picks 💖</h1>
-        <div class="grid small">
-            <div class="option">The Notebook</div>
-            <div class="option">Before Sunrise</div>
-            <div class="option">Pride & Prejudice</div>
-            <div class="option">La La Land</div>
-        </div>
-        <button class="back-btn" onclick="goBack()">⬅ Back</button>
-    </div>
-
-    <!-- COMEDY MOVIES -->
-    <div class="page" id="comedyMovies">
-        <h1>Comedy Picks 😂</h1>
-        <div class="grid small">
-            <div class="option">The Proposal</div>
-            <div class="option">Crazy Rich Asians</div>
-            <div class="option">The Intern</div>
-            <div class="option">10 Things I Hate About You</div>
-        </div>
-        <button class="back-btn" onclick="goBack()">⬅ Back</button>
-    </div>
-
-    <!-- HORROR MOVIES -->
-    <div class="page" id="horrorMovies">
-        <h1>Horror Picks 👻</h1>
-        <div class="grid small">
-            <div class="option">The Conjuring</div>
-            <div class="option">A Quiet Place</div>
-            <div class="option">It</div>
-            <div class="option">The Nun</div>
-        </div>
-        <button class="back-btn" onclick="goBack()">⬅ Back</button>
-    </div>
-
-    <script src="./vd.js"></script>
+    <script src="vd.js"></script>
 </body>
 </html>
