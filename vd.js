@@ -32,8 +32,7 @@ function showStartPage() {
             <h1>Here's a Question 💭</h1>
             <img src="${kissingGif}" class="gif">
             <br>
-            <button class="main-btn" onclick="surpriseMe()">🎁 Surprise Me</button>
-
+            
             <button class="main-btn" onclick="showDateOptions()">
                 Will you go on a virtual date with me? 💙
             </button>
@@ -251,20 +250,7 @@ function showFinal(choice) {
     `);
 }
 
-/* ---------- LOAD ---------- */
 
-showStartPage();
-function surpriseMe() {
-    const options = [
-        showMovies,
-        showGames,
-        showTalk,
-        showMusicDate
-    ];
-
-    const randomOption = options[Math.floor(Math.random() * options.length)];
-    randomOption();
-}
 function showMemoryWall() {
     renderPage(() => `
         <h2>Our Little Memories 📸</h2>
