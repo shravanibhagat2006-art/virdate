@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Virtual Date Night 💗</title>
+  <link rel="stylesheet" href="virdate.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- HOME -->
+  <div id="home" class="section active">
+    <h1>What should we do for our virtual date tonight? 💗</h1>
+    <button class="btn" onclick="showSection('movie')">🎬 Movie Night</button>
+    <button class="btn" onclick="showSection('food')">🍕 Eat Together</button>
+    <button class="btn" onclick="showSection('game')">🎮 Play a Game</button>
+    <button class="btn" onclick="showSection('deep')">🌙 Deep Talk</button>
+  </div>
+
+  <!-- MOVIE GENRE -->
+  <div id="movie" class="section">
+    <h1>Pick our movie vibe 🎥</h1>
+    <button class="btn" onclick="showSection('romance')">💗 Romance</button>
+    <button class="btn" onclick="showSection('comedy')">😂 Comedy</button>
+    <button class="btn" onclick="showSection('horror')">👻 Horror</button>
+    <button class="btn back-btn" onclick="showSection('home')">⬅ Back</button>
+  </div>
+
+  <!-- ROMANCE -->
+  <div id="romance" class="section">
+    <h1>Romantic Picks 💕</h1>
+    <button class="btn" onclick="finalMessage('The Notebook')">The Notebook</button>
+    <button class="btn" onclick="finalMessage('Me Before You')">Me Before You</button>
+    <button class="btn" onclick="finalMessage('To All The Boys')">To All The Boys</button>
+    <button class="btn back-btn" onclick="showSection('movie')">⬅ Back</button>
+  </div>
+
+  <!-- COMEDY -->
+  <div id="comedy" class="section">
+    <h1>Comedy Night 😂</h1>
+    <button class="btn" onclick="finalMessage('Friends Episodes')">Friends Episodes</button>
+    <button class="btn" onclick="finalMessage('Home Alone')">Home Alone</button>
+    <button class="btn" onclick="finalMessage('The Hangover')">The Hangover</button>
+    <button class="btn back-btn" onclick="showSection('movie')">⬅ Back</button>
+  </div>
+
+  <!-- HORROR -->
+  <div id="horror" class="section">
+    <h1>Scary Night 👻</h1>
+    <button class="btn" onclick="finalMessage('The Conjuring')">The Conjuring</button>
+    <button class="btn" onclick="finalMessage('Annabelle')">Annabelle</button>
+    <button class="btn" onclick="finalMessage('Insidious')">Insidious</button>
+    <button class="btn back-btn" onclick="showSection('movie')">⬅ Back</button>
+  </div>
+
+  <!-- FOOD -->
+  <div id="food" class="section">
+    <h1>What are we eating? 🍕</h1>
+    <button class="btn" onclick="finalMessage('Pizza Date')">Pizza 🍕</button>
+    <button class="btn" onclick="finalMessage('Maggi Night')">Maggi 🍜</button>
+    <button class="btn" onclick="finalMessage('Burger Time')">Burger 🍔</button>
+    <button class="btn back-btn" onclick="showSection('home')">⬅ Back</button>
+  </div>
+
+  <!-- GAME -->
+  <div id="game" class="section">
+    <h1>Choose our game 🎮</h1>
+    <button class="btn" onclick="finalMessage('Truth or Dare')">Truth or Dare</button>
+    <button class="btn" onclick="finalMessage('Rapid Fire Questions')">Rapid Fire</button>
+    <button class="btn back-btn" onclick="showSection('home')">⬅ Back</button>
+  </div>
+
+  <!-- DEEP TALK -->
+  <div id="deep" class="section">
+    <h1>Late Night Talks 🌙</h1>
+    <button class="btn" onclick="finalMessage('Future Plans Talk')">Future Plans</button>
+    <button class="btn" onclick="finalMessage('Emotional Talk')">Emotional Talk</button>
+    <button class="btn back-btn" onclick="showSection('home')">⬅ Back</button>
+  </div>
+
+  <!-- FINAL -->
+  <div id="final" class="section">
+    <h1>It's a Date 💖</h1>
+    <div id="selectedOption" class="final-message"></div>
+    <button class="btn" onclick="showSection('home')">Start Again 💗</button>
+  </div>
+
+</div>
+
+<script src="virdate.js"></script>
+</body>
+</html>
