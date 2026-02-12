@@ -32,6 +32,8 @@ function showStartPage() {
             <h1>Here's a Question 💭</h1>
             <img src="${kissingGif}" class="gif">
             <br>
+            <button class="main-btn" onclick="surpriseMe()">🎁 Surprise Me</button>
+
             <button class="main-btn" onclick="showDateOptions()">
                 Will you go on a virtual date with me? 💙
             </button>
@@ -50,6 +52,8 @@ function showDateOptions() {
                 <div class="option" onclick="showMovieGenres()">🎬 Movie Night</div>
                 <div class="option" onclick="showGameTypes()">🎮 Game Night</div>
                 <div class="option" onclick="showCuisines()">🍕 Dinner Date</div>
+                { label: "Memory Wall 📸", action: showMemoryWall }
+
                 <div class="option" onclick="showMusicMoods()">🎵 Music Date</div>
             </div>
         </div>
@@ -249,3 +253,34 @@ function showFinal(choice) {
 /* ---------- LOAD ---------- */
 
 showStartPage();
+function surpriseMe() {
+    const options = [
+        showMovies,
+        showGames,
+        showTalk,
+        showMusicDate
+    ];
+
+    const randomOption = options[Math.floor(Math.random() * options.length)];
+    randomOption();
+}
+function showMemoryWall() {
+    renderPage(() => `
+        <h2>Our Little Memories 📸</h2>
+        <div class="memory-grid">
+            <div class="memory-card">
+                <p>💬 That one random late night conversation</p>
+            </div>
+            <div class="memory-card">
+                <p>😂 The joke that never gets old</p>
+            </div>
+            <div class="memory-card">
+                <p>🎵 That song that reminds me of you</p>
+            </div>
+            <div class="memory-card">
+                <p>✨ The first time we talked</p>
+            </div>
+        </div>
+        <button class="main-btn" onclick="showOptions()">Back</button>
+    `);
+}
