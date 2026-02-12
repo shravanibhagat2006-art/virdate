@@ -52,7 +52,8 @@ function showDateOptions() {
                 <div class="option" onclick="showMovieGenres()">🎬 Movie Night</div>
                 <div class="option" onclick="showGameTypes()">🎮 Game Night</div>
                 <div class="option" onclick="showCuisines()">🍕 Dinner Date</div>
-                { label: "Memory Wall 📸", action: showMemoryWall }
+                <div class="option" onclick="showMemoryWall()">📸 Memory Wall</div>
+
 
                 <div class="option" onclick="showMusicMoods()">🎵 Music Date</div>
             </div>
