@@ -2,89 +2,103 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Virtual Date Night 💗</title>
+  <title>Virtual Date 💙</title>
   <link rel="stylesheet" href="virdate.css">
 </head>
-
 <body>
 
 <div class="container">
 
-  <!-- HOME -->
-  <div id="home" class="section active">
-    <h1>What should we do for our virtual date tonight? 💗</h1>
-    <button class="btn" onclick="showSection('movie')">🎬 Movie Night</button>
-    <button class="btn" onclick="showSection('food')">🍕 Eat Together</button>
-    <button class="btn" onclick="showSection('game')">🎮 Play a Game</button>
-    <button class="btn" onclick="showSection('deep')">🌙 Deep Talk</button>
+  <!-- PAGE 1 -->
+  <div id="intro" class="section active">
+    <h1>Here’s a question 💙</h1>
+    <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" class="cat-gif">
+    <button class="main-btn" onclick="showSection('home')">Click to Continue ✨</button>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div id="home" class="section">
+    <h1>Pick our Virtual Date 💫</h1>
+
+    <div class="grid">
+      <div class="card" onclick="showSection('movie')">
+        🎬
+        <p>Movie Night</p>
+      </div>
+
+      <div class="card" onclick="showSection('food')">
+        🍕
+        <p>Eat Together</p>
+      </div>
+
+      <div class="card" onclick="showSection('game')">
+        🎮
+        <p>Play a Game</p>
+      </div>
+
+      <div class="card" onclick="showSection('deep')">
+        🌙
+        <p>Deep Talk</p>
+      </div>
+    </div>
+
+    <button class="back-btn" onclick="showSection('intro')">⬅ Back</button>
   </div>
 
   <!-- MOVIE GENRE -->
   <div id="movie" class="section">
-    <h1>Pick our movie vibe 🎥</h1>
-    <button class="btn" onclick="showSection('romance')">💗 Romance</button>
-    <button class="btn" onclick="showSection('comedy')">😂 Comedy</button>
-    <button class="btn" onclick="showSection('horror')">👻 Horror</button>
-    <button class="btn back-btn" onclick="showSection('home')">⬅ Back</button>
-  </div>
-
-  <!-- ROMANCE -->
-  <div id="romance" class="section">
-    <h1>Romantic Picks 💕</h1>
-    <button class="btn" onclick="finalMessage('The Notebook')">The Notebook</button>
-    <button class="btn" onclick="finalMessage('Me Before You')">Me Before You</button>
-    <button class="btn" onclick="finalMessage('To All The Boys')">To All The Boys</button>
-    <button class="btn back-btn" onclick="showSection('movie')">⬅ Back</button>
-  </div>
-
-  <!-- COMEDY -->
-  <div id="comedy" class="section">
-    <h1>Comedy Night 😂</h1>
-    <button class="btn" onclick="finalMessage('Friends Episodes')">Friends Episodes</button>
-    <button class="btn" onclick="finalMessage('Home Alone')">Home Alone</button>
-    <button class="btn" onclick="finalMessage('The Hangover')">The Hangover</button>
-    <button class="btn back-btn" onclick="showSection('movie')">⬅ Back</button>
-  </div>
-
-  <!-- HORROR -->
-  <div id="horror" class="section">
-    <h1>Scary Night 👻</h1>
-    <button class="btn" onclick="finalMessage('The Conjuring')">The Conjuring</button>
-    <button class="btn" onclick="finalMessage('Annabelle')">Annabelle</button>
-    <button class="btn" onclick="finalMessage('Insidious')">Insidious</button>
-    <button class="btn back-btn" onclick="showSection('movie')">⬅ Back</button>
+    <h1>Choose a Genre 🎥</h1>
+    <div class="grid">
+      <div class="card" onclick="finalMessage('Romantic Movie 💙')">💖<p>Romance</p></div>
+      <div class="card" onclick="finalMessage('Comedy Night 😂')">😂<p>Comedy</p></div>
+      <div class="card" onclick="finalMessage('Horror Night 👻')">👻<p>Horror</p></div>
+      <div class="card" onclick="finalMessage('Anime Night 🌸')">🌸<p>Anime</p></div>
+    </div>
+    <button class="back-btn" onclick="showSection('home')">⬅ Back</button>
   </div>
 
   <!-- FOOD -->
   <div id="food" class="section">
-    <h1>What are we eating? 🍕</h1>
-    <button class="btn" onclick="finalMessage('Pizza Date')">Pizza 🍕</button>
-    <button class="btn" onclick="finalMessage('Maggi Night')">Maggi 🍜</button>
-    <button class="btn" onclick="finalMessage('Burger Time')">Burger 🍔</button>
-    <button class="btn back-btn" onclick="showSection('home')">⬅ Back</button>
+    <h1>What are we eating? 🍴</h1>
+    <div class="grid">
+      <div class="card" onclick="finalMessage('Pizza Date 🍕')">🍕<p>Pizza</p></div>
+      <div class="card" onclick="finalMessage('Maggi Night 🍜')">🍜<p>Maggi</p></div>
+      <div class="card" onclick="finalMessage('Burger Time 🍔')">🍔<p>Burger</p></div>
+      <div class="card" onclick="finalMessage('Dessert Date 🍰')">🍰<p>Dessert</p></div>
+    </div>
+    <button class="back-btn" onclick="showSection('home')">⬅ Back</button>
   </div>
 
   <!-- GAME -->
   <div id="game" class="section">
-    <h1>Choose our game 🎮</h1>
-    <button class="btn" onclick="finalMessage('Truth or Dare')">Truth or Dare</button>
-    <button class="btn" onclick="finalMessage('Rapid Fire Questions')">Rapid Fire</button>
-    <button class="btn back-btn" onclick="showSection('home')">⬅ Back</button>
+    <h1>Pick a Game 🎮</h1>
+    <div class="grid">
+      <div class="card" onclick="finalMessage('Truth or Dare 😏')">😏<p>Truth or Dare</p></div>
+      <div class="card" onclick="finalMessage('Rapid Fire 💥')">💥<p>Rapid Fire</p></div>
+      <div class="card" onclick="finalMessage('Online Game 🎯')">🎯<p>Online Game</p></div>
+      <div class="card" onclick="finalMessage('Rock Paper Scissors ✊')">✊<p>RPS</p></div>
+    </div>
+    <button class="back-btn" onclick="showSection('home')">⬅ Back</button>
   </div>
 
   <!-- DEEP TALK -->
   <div id="deep" class="section">
-    <h1>Late Night Talks 🌙</h1>
-    <button class="btn" onclick="finalMessage('Future Plans Talk')">Future Plans</button>
-    <button class="btn" onclick="finalMessage('Emotional Talk')">Emotional Talk</button>
-    <button class="btn back-btn" onclick="showSection('home')">⬅ Back</button>
+    <h1>Late Night Mood 🌙</h1>
+    <div class="grid">
+      <div class="card" onclick="finalMessage('Future Plans 🌍')">🌍<p>Future</p></div>
+      <div class="card" onclick="finalMessage('Emotional Talk 💌')">💌<p>Emotional</p></div>
+      <div class="card" onclick="finalMessage('Missing You Hours 🥺')">🥺<p>Miss You</p></div>
+      <div class="card" onclick="finalMessage('Silly + Cute 🐣')">🐣<p>Silly</p></div>
+    </div>
+    <button class="back-btn" onclick="showSection('home')">⬅ Back</button>
   </div>
 
   <!-- FINAL -->
   <div id="final" class="section">
-    <h1>It's a Date 💖</h1>
-    <div id="selectedOption" class="final-message"></div>
-    <button class="btn" onclick="showSection('home')">Start Again 💗</button>
+    <h1>It’s a Date 💙</h1>
+    <img src="https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif" class="cat-gif">
+    <p id="selectedOption" class="final-text"></p>
+    <button class="main-btn" onclick="showSection('home')">Start Again ✨</button>
   </div>
 
 </div>

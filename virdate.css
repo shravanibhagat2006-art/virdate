@@ -1,64 +1,91 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #ff9ecf, #ffcce6);
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  color: white;
 }
 
 .container {
-  width: 90%;
-  max-width: 500px;
+  width: 95%;
+  max-width: 600px;
   text-align: center;
-  background: white;
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
 h1 {
-  color: #ff4da6;
+  margin-bottom: 20px;
 }
 
 .section {
   display: none;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
 .active {
   display: block;
 }
 
-.btn {
-  display: block;
-  margin: 10px auto;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 25px;
-  background: #ff4da6;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s;
-  width: 80%;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin: 20px 0;
 }
 
-.btn:hover {
-  background: #ff1a8c;
+.card {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  padding: 30px 10px;
+  border-radius: 15px;
+  font-size: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card p {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.card:hover {
+  background: rgba(255,255,255,0.3);
   transform: scale(1.05);
 }
 
+.main-btn {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  background: white;
+  color: #1e3c72;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
 .back-btn {
-  background: #999;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-top: 15px;
 }
 
-.back-btn:hover {
-  background: #666;
+.cat-gif {
+  width: 150px;
+  border-radius: 15px;
+  margin: 15px 0;
 }
 
-.final-message {
-  font-size: 20px;
-  color: #ff4da6;
-  margin-top: 20px;
+.final-text {
+  font-size: 18px;
+  margin-top: 15px;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
