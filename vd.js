@@ -66,21 +66,21 @@ function attachOptionListeners() {
 
 /* ---------- MOVIES ---------- */
 
-function movieList(title, movies) {
+function showMovieGenres() {
     renderPage(() => `
         <div class="container">
             <button class="main-btn" onclick="goBack()">⬅ Back</button>
-            <h1>${title}</h1>
+            <h1>Choose a Genre 🎬</h1>
             <div class="grid">
-                ${movies.map(m => 
-                    `<div class="option" data-choice="${m}">${m}</div>`
-                ).join("")}
+                <div class="option" onclick="showRomanceMovies()">💖 Romance</div>
+                <div class="option" onclick="showComedyMovies()">😂 Comedy</div>
+                <div class="option" onclick="showHorrorMovies()">👻 Horror</div>
+                <div class="option" onclick="showActionMovies()">🔥 Action</div>
             </div>
         </div>
     `);
-
-    attachOptionListeners();
 }
+
 
 
 
@@ -115,18 +115,21 @@ function showActionMovies() {
 }
 
 function movieList(title, movies) {
-    return `
+    renderPage(() => `
         <div class="container">
             <button class="main-btn" onclick="goBack()">⬅ Back</button>
             <h1>${title}</h1>
             <div class="grid">
                 ${movies.map(m => 
-                    `<div class="option" onclick="showFinal('${m}')">${m}</div>`
+                    `<div class="option" data-choice="${m}">${m}</div>`
                 ).join("")}
             </div>
         </div>
-    `;
+    `);
+
+    attachOptionListeners();
 }
+
 
 /* ---------- GAMES ---------- */
 
