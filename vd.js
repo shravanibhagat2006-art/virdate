@@ -55,23 +55,34 @@ function showDateOptions() {
         </div>
     `);
 }
+function attachOptionListeners() {
+    document.querySelectorAll(".option[data-choice]").forEach(el => {
+        el.addEventListener("click", function() {
+            const choice = this.getAttribute("data-choice");
+            showFinal(choice);
+        });
+    });
+}
 
 /* ---------- MOVIES ---------- */
 
-function showMovieGenres() {
+function movieList(title, movies) {
     renderPage(() => `
         <div class="container">
             <button class="main-btn" onclick="goBack()">⬅ Back</button>
-            <h1>Choose a Genre 🎬</h1>
+            <h1>${title}</h1>
             <div class="grid">
-                <div class="option" onclick="showRomanceMovies()">💖 Romance</div>
-                <div class="option" onclick="showComedyMovies()">😂 Comedy</div>
-                <div class="option" onclick="showHorrorMovies()">👻 Horror</div>
-                <div class="option" onclick="showActionMovies()">🔥 Action</div>
+                ${movies.map(m => 
+                    `<div class="option" data-choice="${m}">${m}</div>`
+                ).join("")}
             </div>
         </div>
     `);
+
+    attachOptionListeners();
 }
+
+
 
 function showRomanceMovies() {
     renderPage(() => movieList("Romance Picks 💖",
@@ -148,12 +159,15 @@ function gameList(title, games) {
             <h1>${title}</h1>
             <div class="grid">
                 ${games.map(g => 
-                    `<div class="option" onclick="showFinal('${g}')">${g}</div>`
+                    `<div class="option" data-choice="${g}">${g}</div>`
                 ).join("")}
             </div>
         </div>
     `);
+
+    attachOptionListeners();
 }
+
 
 /* ---------- DINNER ---------- */
 
@@ -186,12 +200,15 @@ function foodList(title, foods) {
             <h1>${title}</h1>
             <div class="grid">
                 ${foods.map(f => 
-                    `<div class="option" onclick="showFinal('${f}')">${f}</div>`
+                    `<div class="option" data-choice="${f}">${f}</div>`
                 ).join("")}
             </div>
         </div>
     `);
+
+    attachOptionListeners();
 }
+
 
 /* ---------- MUSIC ---------- */
 
@@ -224,12 +241,15 @@ function musicList(title, songs) {
             <h1>${title}</h1>
             <div class="grid">
                 ${songs.map(s => 
-                    `<div class="option" onclick="showFinal('${s}')">${s}</div>`
+                    `<div class="option" data-choice="${s}">${s}</div>`
                 ).join("")}
             </div>
         </div>
     `);
+
+    attachOptionListeners();
 }
+
 
 /* ---------- FINAL PAGE ---------- */
 
