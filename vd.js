@@ -85,48 +85,51 @@ function showMovieGenres() {
 
 
 function showRomanceMovies() {
-    renderPage(() => movieList("Romance Picks 💖",
+    movieList("Romance Picks 💖",
         ["The Notebook 💖","Before Sunrise 🌅","Pride & Prejudice 🌸","La La Land 🎶"]
-    ));
+    );
 }
 
 function showComedyMovies() {
-    renderPage(() => movieList("Comedy Picks 😂",
+    movieList("Comedy Picks 😂",
         [
             "The Proposal 😂",
             "FRIENDS 📺",
             "How I Met Your Mother 🍻",
             "10 Things I Hate About You 💌"
         ]
-    ));
+    );
 }
 
-
 function showHorrorMovies() {
-    renderPage(() => movieList("Horror Picks 👻",
+    movieList("Horror Picks 👻",
         ["The Conjuring 👻","A Quiet Place 🤫","IT 🎈","The Nun 😨"]
-    ));
+    );
 }
 
 function showActionMovies() {
-    renderPage(() => movieList("Action Picks 🔥",
+    movieList("Action Picks 🔥",
         ["Avengers Endgame 🦸","John Wick 🔫","Mission Impossible 🎯","Mad Max Fury Road 🚗"]
-    ));
+    );
 }
 
+
 function movieList(title, movies) {
-    return `
+    renderPage(() => `
         <div class="container">
             <button class="main-btn" onclick="goBack()">⬅ Back</button>
             <h1>${title}</h1>
             <div class="grid">
                 ${movies.map(m => 
-                    `<div class="option" onclick="showFinal('${m}')">${m}</div>`
+                    `<div class="option" data-choice="${m}">${m}</div>`
                 ).join("")}
             </div>
         </div>
-    `;
+    `);
+
+    attachOptionListeners();
 }
+
 
 
 
